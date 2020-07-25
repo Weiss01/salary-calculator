@@ -210,6 +210,7 @@ function homeDiv() {
     $('<li/>', {text: 'Under the Edit Records Tab, you can double click any value you want to make changes to'}).appendTo('.THEUL');
     $('<li/>', {text: 'When Assigning Trips for employees, you can double click the added trips to remove any trips from the queue'}).appendTo('.THEUL');
     $('<li/>', {text: 'When viewing payouts, you can double click the name of any employee to view the employees individual record for the month'}).appendTo('.THEUL');
+    $('<li/>', {text: 'To save payout summary, press button on top right corner. This will open a new tab where you can then right click and choose print.Then, save file as pdf.'}).appendTo('.THEUL');
     $('<br/>', {}).appendTo('#homeContainer');
     $('<div/>', {class: 'alert alert-warning', role: 'alert'}).appendTo('#homeContainer');
     $('<h5/>', {text: 'Please remember to export your session date before closing your browser!'}).appendTo('.alert');
