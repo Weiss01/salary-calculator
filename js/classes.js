@@ -36,6 +36,7 @@ class Employee {
         this.baseSalary = importedObject.baseSalary;
         this.sa = importedObject.sa;
         this.dpa = importedObject.dpa;
+        this.food = importedObject.food;
         this.petrolAllowance = importedObject.petrolAllowance;
         this.entertainmentAllowance = importedObject.entertainmentAllowance;
         this.foodAllowance = importedObject.foodAllowance;
