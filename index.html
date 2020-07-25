@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Salary Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/master.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand mr-0 pl-3" id="homepagelogo"><img src="img/coin.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"><strong> Weiss</strong></a>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-1.5 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="homepage">
+                                <span data-feather="home"></span>
+                                Homepage
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="registerEmployee">
+                                <span data-feather="user-plus"></span>
+                                Register Employee
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="calculateSalary">
+                                <span data-feather="dollar-sign"></span>
+                                Calculate Salary
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="editRecords">
+                                <span data-feather="tool"></span>
+                                Edit Records
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="view">
+                                <span data-feather="list"></span>
+                                View Payouts
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                      <span>File</span>
+                        <span data-feather="file-text"></span>
+                    </h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" id="exportSessionData">
+                                <span data-feather="download"></span>
+                                Export Session Data
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="importSessionData">
+                                <span data-feather="upload"></span>
+                                Import Session Data
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="" id="myWindow">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" id="titleBar">
+                    <h1 class="h2" id="title">Homepage</h1>
+                </div>
+                <div class="container-fluid" id="homeDiv">
+                    <div class="jumbotron jumbotron-fluid">
+                      <div class="container">
+                        <p class="lead"><strong>How to use: </strong></p>
+                        <ol id="theList">
+                            <li>Go to Register Employee Tab</li>
+                            <li>Enter Name and postion of Employee</li>
+                            <li>Go to Calculate Salary Tab</li>
+                            <li>Enter month of payout</li>
+                            <li>Select position of employees you want to assign salary to</li>
+                            <li>Go to View Payout Tab</li>
+                            <li>Select the month of the payout to view</li>
+                        </ol>
+                        <hr class="my-4">
+                        <p class="lead"><strong>Features: </strong></p>
+                        <ul id="theList">
+                            <li>Under the Edit Records Tab, you can double click any value you want to make changes to</li>
+                            <li>When Assigning Trips for employees, you can double click the added trips to remove any trips from the queue</li>
+                            <li>When viewing payouts, you can double click the name of any employee to view the employees individual record for the month</li>
+                        </ul>
+                        <br>
+                        <div class="alert alert-warning" role="alert">
+                          <h5>Please remember to export your session date before closing your browser!</h5>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+        feather.replace()
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/classes.js"></script>
+    <script type="text/javascript" src="js/myscript.js"></script>
+    <script type="text/javascript" src="js/options.js"></script>
+    <script type="text/javascript" src="js/continue2.js"></script>
+
+</body>
+
+</html>

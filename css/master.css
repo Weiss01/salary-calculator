@@ -1,0 +1,97 @@
+#exportDiv {
+    padding-bottom: 70px;
+}
+
+#importDiv {
+    padding-bottom: 70px;
+}
+
+#registerEmployeeDiv {
+    padding-bottom: 70px;
+}
+
+#deleteEmployeeDiv {
+    padding-bottom: 70px;
+}
+
+#calculateSalaryDiv {
+    padding-bottom: 70px;
+}
+
+#enterTripDiv {
+    padding-bottom: 70px;
+}
+
+#foodAllowanceDiv {
+    padding-bottom: 70px;
+}
+
+#commisionDiv {
+    padding-bottom: 70px;
+}
+
+#projectDiv {
+    padding-bottom: 70px;
+}
+
+#groupDiv {
+    padding-bottom: 70px;
+}
+
+#branchDiv {
+    padding-bottom: 70px;
+}
+
+#viewDiv {
+    padding-bottom: 70px;
+}
+
+#newCalcDiv {
+    padding-bottom: 70px;
+}
+
+#editNameDiv {
+    padding-bottom: 70px;
+}
+
+#employeeTypeLabel {
+    font-size: large;
+}
+
+#thicc {
+    width: 153px;
+}
+
+#thinn {
+    width: 86px;
+}
+
+#singleTableDiv {
+    width: 450px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 60px;
+}
+
+#theList {
+    font-size: large;
+}
+
+a {
+    width: 200px;
+}
+
+.sidebar {
+    width: 200px;
+}
+
+main {
+    width: 100vw;
+    margin-left: 210px;
+    margin-right: 10px;
+    padding-bottom: 50px;
+}
+
+input {
+    width: 50px;
+}
