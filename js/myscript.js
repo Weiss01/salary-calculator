@@ -3,6 +3,7 @@ let viewMonths = [];
 let currentFile;
 let typeSeq = ['Trainee', 'Staff', 'JuniorExecutive', 'SeniorExecutive', 'JuniorBranchManager', 'SeniorBranchManager'];
 let alphabets = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ".split('');
+let myStorage = window.sessionStorage;
 
 createModal();
 
@@ -88,6 +89,7 @@ function sortEmployeeList() {
 
 function cleanup() {
     sortEmployeeList();
+    exists('buttonToolbar') ? $('#buttonToolbar').remove() : {};
     exists('editNameDiv') ? $('#editNameDiv').remove() : {};
     exists('newCalcDiv') ? $('#newCalcDiv').remove() : {};
     exists('homeDiv') ? $('#homeDiv').remove() : {};

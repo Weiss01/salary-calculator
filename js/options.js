@@ -203,8 +203,17 @@ $("body").on("click", "#viewPayout", function() {
     cleanup();
     $('#view').attr('class', 'nav-link active');
     $('#title').html('View Payouts' + '  (' + payoutMonth + ')');
+    $('<div/>', {class: "btn-toolbar mb-2 mb-md-0", id: "buttonToolbar"}).appendTo('#titleBar');
+    $('<button/>', {type: "button", class: "btn btn-sm btn-outline-secondary", id: 'printButton'}).appendTo('#buttonToolbar');
+    $('<span/>', {'data-feather': "printer"}).appendTo('#printButton');
+    $('#printButton').html('<span data-feather="printer"></span>Print in New Tab');
+    feather.replace();
     viewTableDiv();
 })
+
+$("body").on("click", "#printButton", function() {
+    window.open('format.html');
+});
 
 $("body").on("dblclick", "#addedTrips", function(event) {
     event.currentTarget.remove();
@@ -390,6 +399,9 @@ function viewTableDiv() {
     }
     let table = new Table(recordList);
     table = table.getTable();
+
+    myStorage.setItem('table', table);
+    myStorage.setItem('payoutMonth', payoutMonth);
 
     $('<div/>',{class : 'container-fluid', id : 'tableDiv'}).appendTo('#myWindow');
     $('<table/>', {class : 'table table-striped table-bordered'}).appendTo('#tableDiv');
