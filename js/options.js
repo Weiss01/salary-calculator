@@ -93,29 +93,66 @@ $("body").on("click", '#registerButton', function() {
         $('<button/>',{type: 'button', class : 'btn btn-secondary', 'data-dismiss': 'modal', id: 'okay', text: 'Okay'}).appendTo('#modalFooter');
         $('#modal').modal('show');
     } else {
-        let type = $('#employeeType').val();
-        registerType = type;
-        let employee;
-        if (type === 'Trainee') {
-            employee = new Trainee(employeeName);
-        } else if (type === 'Staff') {
-            employee = new Staff(employeeName);
-        } else if (type === 'Junior Executive') {
-            employee = new JuniorExecutive(employeeName);
-        } else if (type === 'Senior Executive') {
-            employee = new SeniorExecutive(employeeName);
-        } else if (type === 'Junior Branch Manager') {
-            employee = new JuniorBranchManager(employeeName);
-        } else if (type === 'Senior Branch Manager') {
-            employee = new SeniorBranchManager(employeeName);
+        let myList = listOfEmployees.map(employee => employee.name);
+        console.log(myList);
+        console.log(myList.includes($('#employeeName').val()));
+        if (myList.includes($('#employeeName').val())) {
+            $('#modalTitle').text('Warning');
+            exists('modalFooter') ? $('#modalFooter').remove() : {}; exists('modalListGroup') ? $('#modalListGroup').remove() : {};
+            $('.modal-body').text("There is already an employee with the same name. Do you want to proceed?");
+            $('<div/>',{class : 'modal-footer', id: 'modalFooter'}).appendTo('.modal-content');
+            $('<button/>',{type: 'button', class : 'btn btn-danger', 'data-dismiss': 'modal', id: 'proceedNewName', text: 'Proceed'}).appendTo('#modalFooter');
+            $('#proceedNewName').click(function() {
+                let type = $('#employeeType').val();
+                registerType = type;
+                let employee;
+                if (type === 'Trainee') {
+                    employee = new Trainee(employeeName);
+                } else if (type === 'Staff') {
+                    employee = new Staff(employeeName);
+                } else if (type === 'Junior Executive') {
+                    employee = new JuniorExecutive(employeeName);
+                } else if (type === 'Senior Executive') {
+                    employee = new SeniorExecutive(employeeName);
+                } else if (type === 'Junior Branch Manager') {
+                    employee = new JuniorBranchManager(employeeName);
+                } else if (type === 'Senior Branch Manager') {
+                    employee = new SeniorBranchManager(employeeName);
+                }
+                listOfEmployees.push(employee);
+                $('#modalTitle').text('Successful Registration');
+                exists('modalFooter') ? $('#modalFooter').remove() : {}; exists('modalListGroup') ? $('#modalListGroup').remove() : {};
+                $('.modal-body').text("Successfully created Employee " + employeeName);
+                $('<div/>',{class : 'modal-footer', id: 'modalFooter'}).appendTo('.modal-content');
+                $('<button/>',{type: 'button', class : 'btn btn-secondary', 'data-dismiss': 'modal', id: 'registerEmployeeDone', text: 'Okay'}).appendTo('#modalFooter');
+                $('#modal').modal('show');
+            })
+            $('#modal').modal('show');
+        } else {
+            let type = $('#employeeType').val();
+            registerType = type;
+            let employee;
+            if (type === 'Trainee') {
+                employee = new Trainee(employeeName);
+            } else if (type === 'Staff') {
+                employee = new Staff(employeeName);
+            } else if (type === 'Junior Executive') {
+                employee = new JuniorExecutive(employeeName);
+            } else if (type === 'Senior Executive') {
+                employee = new SeniorExecutive(employeeName);
+            } else if (type === 'Junior Branch Manager') {
+                employee = new JuniorBranchManager(employeeName);
+            } else if (type === 'Senior Branch Manager') {
+                employee = new SeniorBranchManager(employeeName);
+            }
+            listOfEmployees.push(employee);
+            $('#modalTitle').text('Successful Registration');
+            exists('modalFooter') ? $('#modalFooter').remove() : {}; exists('modalListGroup') ? $('#modalListGroup').remove() : {};
+            $('.modal-body').text("Successfully created Employee " + employeeName);
+            $('<div/>',{class : 'modal-footer', id: 'modalFooter'}).appendTo('.modal-content');
+            $('<button/>',{type: 'button', class : 'btn btn-secondary', 'data-dismiss': 'modal', id: 'registerEmployeeDone', text: 'Okay'}).appendTo('#modalFooter');
+            $('#modal').modal('show');
         }
-        listOfEmployees.push(employee);
-        $('#modalTitle').text('Successful Registration');
-        exists('modalFooter') ? $('#modalFooter').remove() : {}; exists('modalListGroup') ? $('#modalListGroup').remove() : {};
-        $('.modal-body').text("Successfully created Employee " + employeeName);
-        $('<div/>',{class : 'modal-footer', id: 'modalFooter'}).appendTo('.modal-content');
-        $('<button/>',{type: 'button', class : 'btn btn-secondary', 'data-dismiss': 'modal', id: 'registerEmployeeDone', text: 'Okay'}).appendTo('#modalFooter');
-        $('#modal').modal('show');
     }
 })
 
@@ -138,13 +175,15 @@ $("body").on("click", "#deleteButton", function() {
 })
 
 $("body").on("click", "#confirmDelete", function() {
-    if ($('#employeeName').val() !== null) {
+    if ($('#employeeNameList').val() !== null) {
         let myList = listOfEmployees.map(employee => employee.name);
-        const index = myList.indexOf($('#employeeName').val().split(' ').slice(0, -1).join(' '));
+        console.log('mylist -> ' + myList);
+        const index = myList.indexOf($('#employeeNameList').val().split(' ').slice(0, -1).join(' '));
+        console.log('index -> ' + index);
         listOfEmployees.splice(index, 1);
         $('#modalTitle').text('Success Deletion');
         exists('modalFooter') ? $('#modalFooter').remove() : {}; exists('modalListGroup') ? $('#modalListGroup').remove() : {};
-        $('.modal-body').text("Successfully deleted " + $('#employeeName').val());
+        $('.modal-body').text("Successfully deleted " + $('#employeeNameList').val());
         $('<div/>',{class : 'modal-footer', id: 'modalFooter'}).appendTo('.modal-content');
         $('<button/>',{type: 'button', class : 'btn btn-secondary', 'data-dismiss': 'modal', id: 'registerEmployeeDone', text: 'Okay'}).appendTo('#modalFooter');
         $('#modal').modal('show');
@@ -810,6 +849,9 @@ function foodAllowanceDiv(i, mode) {
     $('#saveFood').click(function () {
         if (true) {
             listOfEmployees[i].food[currentMonth] = [];
+            console.log(listOfEmployees[i]);
+            console.log(listOfEmployees[i].food[currentMonth]);
+            console.log($('#addedFood' + i).val());
             if ($('#addedFood' + i).val().length === 0) {
                 listOfEmployees[i].addFood(currentMonth, 0);
             } else {
@@ -818,6 +860,7 @@ function foodAllowanceDiv(i, mode) {
                 });
             }
             listOfEmployees[i].updateFood(currentMonth);
+            console.log(listOfEmployees[i].food[currentMonth]);
             $('#modalTitle').text('Succesful Save');
             exists('modalFooter') ? $('#modalFooter').remove() : {}; exists('modalListGroup') ? $('#modalListGroup').remove() : {};
             $('.modal-body').text("Food Allowance have been saved!");

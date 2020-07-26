@@ -200,9 +200,12 @@ function homeDiv() {
     $('<li/>', {text: 'Enter Name and postion of Employee'}).appendTo('ol');
     $('<li/>', {text: 'Go to Calculate Salary Tab'}).appendTo('ol');
     $('<li/>', {text: 'Enter month of payout'}).appendTo('ol');
-    $('<li/>', {text: 'Select position of employees you want to assign salary to'}).appendTo('ol');
+    $('<li/>', {text: 'Enter details of every employee and save'}).appendTo('ol');
     $('<li/>', {text: 'Go to View Payout Tab'}).appendTo('ol');
     $('<li/>', {text: 'Select the month of the payout to view'}).appendTo('ol');
+    $('<li/>', {text: 'Click print format button of top right'}).appendTo('ol');
+    $('<li/>', {text: 'Go to new tab with the formated payout and right click the table'}).appendTo('ol');
+    $('<li/>', {text: 'Select \'print\' and save as pdf'}).appendTo('ol');
     $('<hr/>', {class: 'my-4'}).appendTo('#homeContainer');
     $('<p/>', {class: 'lead', id: 'lead2'}).appendTo('#homeContainer');
     $('<strong/>', {text: 'Features: '}).appendTo('#lead2');
@@ -212,7 +215,7 @@ function homeDiv() {
     $('<li/>', {text: 'When viewing payouts, you can double click the name of any employee to view the employees individual record for the month'}).appendTo('.THEUL');
     $('<li/>', {text: 'To save payout summary, press button on top right corner. This will open a new tab where you can then right click and choose print.Then, save file as pdf.'}).appendTo('.THEUL');
     $('<br/>', {}).appendTo('#homeContainer');
-    $('<div/>', {class: 'alert alert-warning', role: 'alert'}).appendTo('#homeContainer');
+    $('<div/>', {class: 'alert alert-danger', role: 'alert'}).appendTo('#homeContainer');
     $('<h5/>', {text: 'Please remember to export your session date before closing your browser!'}).appendTo('.alert');
 }
 

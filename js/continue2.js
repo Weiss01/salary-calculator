@@ -103,7 +103,7 @@ function processTrips() {
 function processFood() {
     for (let i = 0; i < listOfEmployees.length; i++) {
         if (listOfEmployees[i].type === 'Staff' || listOfEmployees[i].type === 'JuniorExecutive') {
-            listOfEmployees[i].foodAllowance[currentMonth] = [];
+            listOfEmployees[i].food[currentMonth] = [];
             if ($('#addedFood' + i).val().length === 0) {
                 listOfEmployees[i].addFood(currentMonth, 0);
             } else {
